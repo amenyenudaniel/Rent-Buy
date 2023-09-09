@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { baseUrl, fetchApi } from "../utils/fetchApi";
 import { useEffect, useState } from "react";
 import Property from "../components/Property";
+import "./styles.css";
 
 const Banner = ({
   purpose,

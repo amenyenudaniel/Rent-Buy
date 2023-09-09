@@ -3,6 +3,7 @@ import { FaBed, FaBath } from "react-icons/fa";
 import { BsGridFill } from "react-icons/bs";
 import { MdVerified } from "react-icons/md";
 import millify from "millify";
+import "./styles.css";
 const Property = ({
   property: {
     coverPhoto,

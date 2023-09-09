@@ -1,4 +1,4 @@
-import React from "react";
+import "./styles.css";
 
 const Rent = () => {
   return <div>Rent</div>;
