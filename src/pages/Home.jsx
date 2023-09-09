@@ -1,4 +1,3 @@
-import { Flex, Box, Text, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { baseUrl, fetchApi } from "../utils/fetchApi";
 import { useEffect, useState } from "react";
@@ -11,34 +10,51 @@ const Banner = ({
   desc1,
   desc2,
   linkName,
-  imageUrl,
   buttonText,
 }) => (
-  <Flex flexWrap="wrap" justifyContent="center" alignItems="center" m="10">
-    <img src={imageUrl} alt="purpose" width={500} height={300} />
-    <Box p="5">
-      <Text color="gray.500" fontSize="sm" fontWeight="medium">
-        {purpose}
-      </Text>
-      <Text fontSize="3xl" fontWeight="bold">
-        {title1} <br />
+  <div className="banner__container">
+    <div className="bb">
+      <p>{purpose}</p>
+      <p>
+        {title1}
         {title2}
-      </Text>
-      <Text
-        color="gray.700"
-        fontSize="lg"
-        fontWeight="medium"
-        paddingTop="3"
-        paddingBottom="3"
-      >
-        {desc1} <br />
+      </p>
+      <p>
+        {desc1}
         {desc2}
-      </Text>
-      <Button fontSize="xl">
+      </p>
+      <button>
         <Link to={`${linkName}`}> {buttonText}</Link>
-      </Button>
-    </Box>
-  </Flex>
+      </button>
+    </div>
+  </div>
+);
+
+const Banner2 = ({
+  purpose,
+  title1,
+  title2,
+  desc1,
+  desc2,
+  linkName,
+  buttonText,
+}) => (
+  <div className="banner__container2">
+    <div className="bb">
+      <p>{purpose}</p>
+      <p>
+        {title1}
+        {title2}
+      </p>
+      <p>
+        {desc1}
+        {desc2}
+      </p>
+      <button>
+        <Link to={`${linkName}`}> {buttonText}</Link>
+      </button>
+    </div>
+  </div>
 );
 
 export default function Home() {
@@ -50,7 +66,7 @@ export default function Home() {
       fetchApi(
         `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`
       ).then((data) => {
-        setForSale(data.hits); // Assuming "data" is an object with a "hits" property
+        setForSale(data.hits);
       });
     } catch (error) {
       console.log(error);
@@ -62,7 +78,7 @@ export default function Home() {
       fetchApi(
         `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`
       ).then((data) => {
-        setForRent(data.hits); // Assuming "data" is an object with a "hits" property
+        setForRent(data.hits);
       });
     } catch (error) {
       console.log(error);
@@ -70,39 +86,40 @@ export default function Home() {
   }, []);
 
   return (
-    <Box>
+    <div>
       <Banner
         purpose={"RENT A HOME"}
-        title1="Rental Homes for"
+        title1="Rental Homes for "
         title2="Everyone"
-        desc1="Explore Apartments, Villas, Homes"
+        desc1="Explore Apartments, Villas, Homes "
         desc2={"and more"}
         buttonText={"Explore Renting"}
         linkName="/purpose=for-rent"
         imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
       />
-      <Flex flexWrap={"wrap"} justifyContent={"center"}>
+      <div className="house-card">
         {/* Rent */}
         {forRent.map((property) => (
           <Property key={property?.id} property={property} />
         ))}
-      </Flex>
-      <Banner
+      </div>
+
+      <Banner2
         purpose={"Buy A HOME"}
-        title1="Find, Buy & Own Your"
+        title1="Find, & Buy Your "
         title2="Dream Home"
-        desc1="Explore Apartments, Villas, Homes"
+        desc1="Explore Apartments, Villas, Homes "
         desc2={"and more"}
         buttonText={"Explore Buying"}
         linkName="/purpose=for-sale"
         imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
       />
-      <Flex flexWrap={"wrap"} justifyContent={"center"}>
+      <div className="house-card">
         {/* Buy */}
         {forSale.map((property) => (
           <Property key={property?.id} property={property} />
         ))}
-      </Flex>
-    </Box>
+      </div>
+    </div>
   );
 }
