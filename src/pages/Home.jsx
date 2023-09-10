@@ -14,16 +14,16 @@ const Banner = ({
   buttonText,
 }) => (
   <div className="banner__container">
-    <div className="bb">
+    <div className="banner">
       <p>{purpose}</p>
-      <p>
+      <h1>
         {title1}
         {title2}
-      </p>
-      <p>
+      </h1>
+      <h1>
         {desc1}
         {desc2}
-      </p>
+      </h1>
       <button>
         <Link to={`${linkName}`}> {buttonText}</Link>
       </button>
@@ -41,16 +41,16 @@ const Banner2 = ({
   buttonText,
 }) => (
   <div className="banner__container2">
-    <div className="bb">
+    <div className="banner">
       <p>{purpose}</p>
-      <p>
+      <h1>
         {title1}
         {title2}
-      </p>
-      <p>
+      </h1>
+      <h1>
         {desc1}
         {desc2}
-      </p>
+      </h1>
       <button>
         <Link to={`${linkName}`}> {buttonText}</Link>
       </button>
@@ -96,7 +96,6 @@ export default function Home() {
         desc2={"and more"}
         buttonText={"Explore Renting"}
         linkName="/purpose=for-rent"
-        imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
       />
       <div className="house-card">
         {/* Rent */}
@@ -113,7 +112,6 @@ export default function Home() {
         desc2={"and more"}
         buttonText={"Explore Buying"}
         linkName="/purpose=for-sale"
-        imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
       />
       <div className="house-card">
         {/* Buy */}

@@ -1,0 +1,403 @@
+.app__navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 4rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #000;
+  z-index: 500;
+}
+
+.menu__button {
+  display: none;
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 1.2rem;
+  color: var(--blue);
+  font-family: cursive;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.app__navbar-links {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  gap: 2rem;
+}
+.app__navbar-links p:hover {
+  color: var(--blue);
+  transition: 0.2s;
+}
+
+.mobile__menu {
+  display: flex;
+  position: fixed;
+  width: 30%;
+  top: 0;
+  right: 0;
+  height: 30%;
+  flex-direction: column;
+  background-color: #000;
+  color: white;
+  z-index: 1000;
+  display: none;
+}
+.close__button {
+  color: var(--blue);
+  font-size: 2rem;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
+}
+.app__navbar-links__mobile {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 1rem;
+  gap: 1rem;
+}
+.flex:hover {
+  background-color: var(--blue);
+}
+.flex p {
+  font-size: 1.2rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.menu__icon {
+  font-size: 1.3rem;
+}
+@media screen and (max-width: 1000px) {
+  .app__navbar-links {
+    display: none;
+  }
+  .mobile__menu {
+    display: flex;
+  }
+  .menu__button {
+    display: flex;
+    color: var(--blue);
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .mobile__menu {
+    width: 50%;
+    height: 30%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .logo {
+    font-size: 1.1rem;
+  }
+  .app__navbar {
+    padding: 0.5rem 1rem;
+  }
+  .mobile__menu {
+    width: 70%;
+    height: 30%;
+  }
+}
+
+/* Property */
+.app__property {
+  width: 400px;
+  height: 410px;
+  margin-bottom: 2rem;
+}
+
+.app__property:hover {
+  background-color: rgba(255, 255, 255, 0.168);
+  transition: 0.3s;
+}
+.app__property:hover .image_url {
+  opacity: 0.4;
+  transition: 0.3s;
+}
+
+.image_url {
+  width: 400px;
+  height: 260px;
+  object-fit: cover;
+}
+
+.property__head {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 0.2rem 1rem;
+}
+.property__head p {
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.property__logo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.verify {
+  font-size: 1.5rem;
+  color: var(--blue);
+}
+
+.property__stat {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 0.7rem 1rem;
+}
+.property__stat p {
+  color: white;
+  font-size: 1.1rem;
+  display: flex;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.property__stat p span {
+  color: var(--blue);
+  font-size: 1.3rem;
+  margin-left: 10px;
+}
+
+.property__title {
+  color: white;
+  padding: 0.1rem 0.4rem;
+  font-size: 1.2rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width: 480px) {
+  .app__property {
+    width: 100%;
+    height: 100%;
+  }
+
+  .image_url {
+    width: 100%;
+    height: 100%;
+  }
+
+  .property__head p {
+    font-size: 1.2rem;
+  }
+  .property__logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .verify {
+    font-size: 1.2rem;
+  }
+
+  .property__stat p {
+    font-size: 1rem;
+  }
+  .property__stat p span {
+    font-size: 1rem;
+  }
+
+  .property__title {
+    font-size: 1rem;
+  }
+}
+
+/* Footer */
+.house__img {
+  position: relative;
+  width: 700px;
+  height: 100%;
+  margin: 20px 0;
+  border-radius: 50% / 10%;
+  color: white;
+  text-align: center;
+  text-indent: 0.1em;
+  border: 10px solid var(--blue);
+  object-fit: cover;
+}
+
+.house__img::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  right: -5%;
+  left: -5%;
+  background: inherit;
+  border-radius: 5% / 50%;
+}
+
+.app__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 2rem;
+}
+
+.footer__logo {
+  font-size: 4rem;
+  color: var(--blue);
+  font-family: cursive;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+}
+
+.footer__links__icon {
+  display: flex;
+  color: var(--blue);
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.footer__links__icon * {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.footer__links__icon *:hover {
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: -10px;
+  color: white;
+}
+
+.app__footer__links {
+  display: flex;
+  color: white;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  gap: 5rem;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+}
+
+.footer__links__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.footer__links__container h4 {
+  font-size: 1.3rem;
+  font-family: cursive;
+  margin-bottom: 1rem;
+}
+
+.footer__links__container p {
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: rgb(98, 98, 202);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.footer__links__container p:hover {
+  text-decoration: underline var(--blue);
+  cursor: pointer;
+}
+
+.download {
+  font-size: 0.9rem;
+  color: white;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  cursor: pointer;
+}
+.download span,
+.copyright span,
+.screen__readers span {
+  color: rgb(98, 98, 202);
+}
+.download span:hover,
+.copyright span:hover,
+.screen__readers span:hover {
+  text-decoration: underline var(--blue);
+  cursor: pointer;
+}
+.copyright,
+.screen__readers {
+  text-align: center;
+  color: white;
+  margin-top: 1.5rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.footer__last {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  margin-bottom: 6rem;
+  gap: 1rem;
+}
+
+.home__logo {
+  color: white;
+  font-size: 5rem;
+  cursor: pointer;
+}
+.footer__last h1 {
+  color: var(--blue);
+  font-family: cursive;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 750px) {
+  .house__img {
+    width: 400px;
+  }
+  .footer__logo {
+    font-size: 3rem;
+  }
+  .footer__links__icon {
+    gap: 2rem;
+  }
+
+  .footer__links__icon * {
+    font-size: 1.5rem;
+  }
+  footer {
+    padding: 1rem 1rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .house__img {
+    width: 100%;
+    padding: 1rem 1rem;
+  }
+  .footer__logo {
+    font-size: 2.5rem;
+  }
+  .footer__links__icon {
+    gap: 1rem;
+  }
+
+  .footer__links__icon * {
+    font-size: 1.2rem;
+  }
+}

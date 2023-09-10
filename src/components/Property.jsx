@@ -19,40 +19,48 @@ const Property = ({
   },
 }) => {
   return (
-    <div className="app__prop">
-      <Link to={`/property/${externalID}`} className="linktag">
-        <div>
-          <div className="image_width">
-            <img
-              src={coverPhoto ? coverPhoto?.url : "/public/house.jpg"}
-              alt="property"
-              loading="lazy"
-              className="image_url"
-            />
-          </div>
-          <div>
-            <div>
-              <div>
-                <div>{isVerified && <MdVerified />}</div>
-                <p>
-                  AED {millify(price)}
-                  {rentFrequency && `/${rentFrequency}`}
-                </p>
-              </div>
-              <div>{/* <Avatar size={"sm"} src={agency?.logo?.url} /> */}</div>
-            </div>
-            <div al>
-              {rooms}
-              <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft
-              <BsGridFill />
-            </div>
-            <p fontSize={"lg"} color={"white"}>
-              {title.length > 30 ? `${title.substring(0, 30)}... ` : title}
-            </p>
-          </div>
-        </div>
-      </Link>
-    </div>
+    <Link to={`/property/${externalID}`} className="linktag app__property">
+      <img
+        src={coverPhoto ? coverPhoto?.url : "/public/house.jpg"}
+        alt="property"
+        loading="lazy"
+        className="image_url"
+      />
+
+      <div className="property__head">
+        {isVerified && <MdVerified className="verify" />}
+        <p>
+          AED {millify(price)}
+          {rentFrequency && `/${rentFrequency}`}
+        </p>
+        <img src={agency?.logo?.url} alt="logo" className="property__logo" />
+      </div>
+
+      <div className="property__stat">
+        <p>
+          {rooms}
+          <span>
+            <FaBed />
+          </span>
+        </p>
+        <p>
+          {baths}
+          <span>
+            <FaBath />
+          </span>
+        </p>
+        <p>
+          {millify(area)} sqft
+          <span>
+            <BsGridFill />
+          </span>
+        </p>
+      </div>
+
+      <p className="property__title">
+        {title.length > 30 ? `${title.substring(0, 30)}... ` : title}
+      </p>
+    </Link>
   );
 };
 

@@ -1,0 +1,152 @@
+.banner__container {
+  background-image: url(../../public/for-rent.jpg);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  height: 40vh;
+  width: 100%;
+  background-position: center;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  justify-content: center;
+}
+
+.banner__container2 {
+  background-image: url(../../public/for-sale.jpg);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  height: 40vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  justify-content: center;
+}
+
+.banner {
+  padding: 2rem 2rem;
+}
+
+.banner p {
+  font-size: 5rem;
+  font-weight: 800;
+  color: rgb(252, 252, 252);
+  margin-bottom: 1rem;
+  font-style: italic;
+  font-family: cursive;
+  letter-spacing: -2px;
+  word-spacing: -15px;
+}
+
+.banner h1 {
+  font-size: 3rem;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.banner button {
+  padding: 0.7rem 1rem;
+  background-color: var(--blue);
+  border-radius: 2px;
+  outline: none;
+  font-size: 1.2rem;
+  border: none;
+  font-weight: 700;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.banner button:hover {
+  background-color: white;
+  color: var(--blue);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 1300px) {
+  .banner p {
+    font-size: 3rem;
+    word-spacing: -10px;
+  }
+
+  .banner h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .banner p {
+    font-size: 2.5rem;
+    word-spacing: -8px;
+  }
+
+  .banner h1 {
+    font-size: 2.1rem;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .banner p {
+    font-size: 2.1rem;
+    word-spacing: 1px;
+  }
+
+  .banner h1 {
+    font-size: 1.9rem;
+  }
+  .banner button {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .banner p {
+    font-size: 2rem;
+  }
+
+  .banner h1 {
+    font-size: 1.8rem;
+  }
+  .banner button {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .banner p {
+    font-size: 1.8rem;
+  }
+
+  .banner h1 {
+    font-size: 1.6rem;
+  }
+  .banner button {
+    font-size: 0.9rem;
+  }
+}
+
+/* Property */
+.house-card {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 8%;
+  gap: 2rem;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1528px) {
+  .house-card {
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+}
